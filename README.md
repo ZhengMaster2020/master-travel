@@ -4,7 +4,7 @@
 
 该项目是一款实现在线预订旅游度假产品，休闲旅游预订平台，提供国内游、国外游、周边旅游以及旅游攻略等功能的web应用。
 
-:tv:**项目演示**
+:tv:**项目演示** [演示地址](https://github.com/ZhengMaster2020/vue-travel)
 
 ![img](https://github.com/ZhengMaster2020/vue-travel/blob/master/public/images/travelpro.gif)
 
@@ -91,7 +91,7 @@ alt+鼠标左键选中`Local:   http://localhost:8080/`快速打开浏览器，�
 
 我们的项目结果：
 
-![img](C:\Users\lizheng\Desktop\00.png)
+![img](https://github.com/ZhengMaster2020/vue-travel/blob/master/public/images/00.png)
 
 3. 查看最终生成的项目文件夹目录如下
 
