@@ -76,9 +76,62 @@ vue-travel -- 项目目录
     └── store.js -- Vuex配置文件
 ```
 
+## 项目开发
+1. 打开router.js文件，修改路由配置。我们去掉`About`这个选项，新增加登录`login`以及注册`register`选项，为项目新增加登录以及注册页面。具体的配置如下：
 
+```javascript
+
+export default new Router({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: Home
+    },
+++  {
+      path: '/login',
+      name: 'login',
+      component: () => import(/* webpackChunkName: "about" */ './views/Login.vue')
+    },
+++  {
+      path: '/register',
+      name: 'register',
+      component: () => import(/* webpackChunkName: "about" */ './views/Register.vue')
+    }
+  ]
+})
+```
+
+2. 打开views文件下，删掉`About.vue`文件，新增加`Login.vue`以及`Register.vue`文件
+
+```javascript
+/**Login**/
+<template>
+  <div class="login">
+    <h1>This is an login page</h1>
+  </div>
+</template>
+
+```
+
+```javascript
+/**Register**/
+<template>
+  <div class="register">
+    <h1>This is an register page</h1>
+  </div>
+</template>
+
+```
+
+打开浏览器：
+
+输入`http://localhost:8080/login`以及`http://localhost:8080/register`即可访问对应的页面
 
 ## Project setup
+
 ```
 npm install
 ```
