@@ -6,6 +6,10 @@
       <router-link to="/register">register</router-link> |
     </div>
     <router-view/>
+    <div>
+      <Header></Header>
+      <Footer></Footer>
+    </div>
   </div>
 </template>
 <style lang="stylus">
