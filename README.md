@@ -6,7 +6,7 @@
 
 :tv:**项目演示**
 
-![img](C:\Users\lizheng\Desktop\travelpro.gif)
+![img](https://github.com/ZhengMaster2020/vue-travel/blob/master/public/images/travelpro.gif)
 
 :fu:**项目功能：**
 
