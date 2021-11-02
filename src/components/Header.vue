@@ -5,7 +5,6 @@
       class="travel-header-carousel"
       show-arrow="never"
       direction="vertical"
-      indicator-position="never"
       animation-name="fade"
     >
       <a-carousel-item v-for="image in images">

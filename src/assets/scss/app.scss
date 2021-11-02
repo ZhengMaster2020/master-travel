@@ -2,10 +2,28 @@
 
 #app {
   @include flex(flex-start, center, column);
+  position: relative;
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #f5f9f9;
   overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    Helvetica Neue, sans-serif;
+  font-size: 14px;
+  line-height: 1.43;
+  color: #484848;
+  background-color: #fff;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.back-top > .arco-back-top-btn {
+  background-color: #999;
 }
 
 ::-webkit-scrollbar {
