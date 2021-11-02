@@ -117,8 +117,7 @@ import bg4 from '../../assets/images/nearbg-4.webp'
     &-wrap {
       // @include flex(flex-start, center);
       display: grid;
-      grid-template-columns: auto auto auto;
-      grid-template-rows: auto auto auto;
+      grid-template-columns: repeat(4, 25%);
       gap: 16px;
 
       &-item {
@@ -129,7 +128,7 @@ import bg4 from '../../assets/images/nearbg-4.webp'
           width: 64px;
           height: 64px;
           border-radius: 4px;
-          background-color: #eee;
+          // background-color: #eee;
           margin-right: 10px;
         }
         .right {
@@ -164,7 +163,7 @@ import bg4 from '../../assets/images/nearbg-4.webp'
 
         .img {
           width: 100%;
-          background: rgb(221, 221, 221);
+          // background: rgb(221, 221, 221);
           border-radius: 8px;
         }
 
@@ -186,7 +185,7 @@ import bg4 from '../../assets/images/nearbg-4.webp'
         cursor: pointer;
         .img {
           width: 100%;
-          background: rgb(221, 221, 221);
+          // background: rgb(221, 221, 221);
           border-radius: 8px;
         }
 
