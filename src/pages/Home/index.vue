@@ -50,10 +50,19 @@
     <section class="inspiration">
       <h3 class="inspiration-title">Inspiration for future getaways</h3>
 
-      <a-tabs default-active-key="2">
-        <a-tab-pane key="1" title="Tab 1"> Content of Tab Panel 1 </a-tab-pane>
-        <a-tab-pane key="2" title="Tab 2"> Content of Tab Panel 2 </a-tab-pane>
-        <a-tab-pane key="3" title="Tab 3"> Content of Tab Panel 3 </a-tab-pane>
+      <a-tabs default-active-key="0" class="inspiration-tab">
+        <a-tab-pane
+          :key="idx"
+          :title="item.name"
+          v-for="(item, idx) in inspirationTabs"
+        >
+          <div class="inspiration-tab-panel">
+            <div class="inspiration-tab-panel--item" v-for="item in 38">
+              <span class="h5">Los Angeles</span>
+              <span class="h6">California</span>
+            </div>
+          </div>
+        </a-tab-pane>
       </a-tabs>
     </section>
   </main>
@@ -67,6 +76,15 @@ import bg1 from '../../assets/images/nearbg-1.webp'
 import bg2 from '../../assets/images/nearbg-2.webp'
 import bg3 from '../../assets/images/nearbg-3.webp'
 import bg4 from '../../assets/images/nearbg-4.webp'
+
+const inspirationTabs = [
+  { name: 'Destinations for arts & culture' },
+  { name: 'Destinations for outdoor adventure' },
+  { name: 'Mountain cabins' },
+  { name: 'Beach destinations' },
+  { name: 'Popular destinations' },
+  { name: 'Unique Stays' }
+]
 </script>
 
 <style lang="scss" scoped>
@@ -253,13 +271,51 @@ import bg4 from '../../assets/images/nearbg-4.webp'
   }
 
   .inspiration {
-    margin-top: 60px;
+    margin: 60px 0;
 
     &-title {
       color: #222;
       font-weight: 400;
       width: 100%;
       margin-bottom: 8px;
+    }
+
+    &-tab {
+      &-panel {
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+        gap: 16px;
+
+        &--item {
+          @include flex(center, flex-start, column);
+          .h5 {
+            color: #222;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: 14px;
+            line-height: 18px;
+            cursor: pointer;
+          }
+
+          .h6 {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #717171;
+          }
+        }
+      }
+
+      :deep(.arco-tabs-tab) {
+        color: #717171;
+      }
+
+      :deep(.arco-tabs-tab-active) {
+        color: #222;
+      }
+      :deep(.arco-tabs-nav-ink) {
+        background-color: #222;
+      }
     }
   }
 }

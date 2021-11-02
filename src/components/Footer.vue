@@ -31,28 +31,29 @@
 
     <div class="travel-footer-bottom">
       <div class="left">
-        <span>© 2021 Airbnb, Inc.·</span>
-        <router-link to="/">Privacy</router-link>
-        <span>.</span>
-        <router-link to="/">Terms</router-link>
-        <span>.</span>
-        <router-link to="/">Sitemap</router-link>
+        <span>© 2021 Airbnb, Inc.</span>
+        <div class="link-wrap">
+          <router-link to="/">Privacy</router-link>
+          <router-link to="/">Terms</router-link>
+          <router-link to="/">Sitemap</router-link>
+        </div>
       </div>
       <div class="right">
-        <icon-apps />
+        <img :src="sphere" class="img" />
         <router-link to="/">English(US)</router-link>
-        <div>
-          <span>￥</span>
+        <div style="margin-left: 10px">
+          <span style="margin-right: 5px">￥</span>
           <router-link to="/">CNY</router-link>
         </div>
-        <icon-weibo-circle-fill />
+        <icon-weibo-circle-fill style="margin-left: 10px" />
       </div>
     </div>
   </footer>
 </template>
 
 <script setup lang="ts">
-import { IconApps, IconWeiboCircleFill } from '@arco-design/web-vue/es/icon'
+import { IconWeiboCircleFill } from '@arco-design/web-vue/es/icon'
+import sphere from '../assets/images/sphere.png'
 </script>
 
 <style scoped lang="scss">
@@ -97,9 +98,53 @@ import { IconApps, IconWeiboCircleFill } from '@arco-design/web-vue/es/icon'
 
 .travel-footer-bottom {
   @include flex(space-between);
+  color: #222;
+
+  .link-wrap {
+    margin-left: 10px;
+    a {
+      position: relative;
+      color: #222;
+      margin-left: 10px;
+      padding-left: 10px;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &::before {
+        content: '.';
+        position: absolute;
+        top: -4px;
+        left: -2px;
+      }
+    }
+  }
+
+  .left,
+  .right,
+  .link-wrap {
+    @include flex;
+    color: #222;
+  }
 
   .right {
-    @include flex;
+    a {
+      color: #222;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+        color: #666;
+      }
+    }
+
+    .img {
+      width: 16px;
+      height: 16px;
+      margin-right: 6px;
+      cursor: pointer;
+    }
   }
 }
 </style>
