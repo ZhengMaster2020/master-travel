@@ -17,7 +17,7 @@
 
 :tv:**项目演示** [演示地址](https://github.com/ZhengMaster2020/vue-travel)
 
-![img](./publish/home.gif)
+![img](https://github.com/ZhengMaster2020/master-travel/blob/master/public/home.gif?raw=true)
 
 :fu:**项目功能：**
 
