@@ -13,10 +13,11 @@
 | Vite               | https://cn.vitejs.dev/            |
 | Typescript         | https://www.tslang.cn/index.html  |
 | Scss               | https://www.sass.hk/              |
+| AcroDesign         | https://arco.design/              |
 
 :tv:**项目演示** [演示地址](https://github.com/ZhengMaster2020/vue-travel)
 
-![img](https://github.com/ZhengMaster2020/vue-travel/blob/master/public/images/travelpro.gif)
+![img](./publish/home.gif)
 
 :fu:**项目功能：**
 
@@ -41,7 +42,7 @@
 
 ## 项目初始化
 
-1. 在任一个文件里，打开`git bash`,或者 cmd 来打开命令行窗口，输入命令`vue create vue-travel`
+1. 在任一个文件里，打开`git bash`,或者 cmd 来打开命令行窗口，输入命令`vue create vite`
 2. 接下来，进行选择，上下箭头切换选项，空格选中选项。看到一下的最终结果：
 
 ```bash
