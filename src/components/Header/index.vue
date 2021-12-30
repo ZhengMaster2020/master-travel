@@ -33,7 +33,7 @@
         >
           <template #suffix>
             <a-button status="danger" type="primary" shape="circle">
-              <icon-search />
+              <icon-search></icon-search>
             </a-button>
           </template>
         </a-input>
@@ -54,10 +54,15 @@
             :class="['icon', scrollTop > 100 ? 'icon-grid' : '']"
           ></icon-apps>
         </a-button>
-        <a-button class="btn-3" shape="round">
-          <icon-unordered-list class="icon"></icon-unordered-list>
-          <icon-github class="icon"></icon-github>
-        </a-button>
+        <a-popover trigger="click" position="lt">
+          <a-button class="btn-3" shape="round">
+            <icon-unordered-list class="icon"></icon-unordered-list>
+            <icon-github class="icon"></icon-github>
+          </a-button>
+          <template #content>
+            <HeaderPopover />
+          </template>
+        </a-popover>
       </div>
     </div>
   </div>
@@ -65,11 +70,12 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-// import { debounce } from '../utils/debounce'
-import ImageBg from '../assets/images/bg.webp'
-import ImageBg1 from '../assets/images/bg.png'
-import airbnbRed from '../assets/images/airbnb-red.png'
-import airbnbWhite from '../assets/images/airbnb-white.png'
+import HeaderPopover from '@components/HeaderPopover/index.vue'
+
+import ImageBg from '@assets/images/bg.webp'
+import ImageBg1 from '@assets/images/bg.png'
+import airbnbRed from '@assets/images/airbnb-red.png'
+import airbnbWhite from '@assets/images/airbnb-white.png'
 
 import {
   IconGithub,
@@ -99,7 +105,7 @@ onBeforeUnmount(() => {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/mixin';
+@import '@assets/scss/mixin';
 
 .travel-header {
   position: relative;

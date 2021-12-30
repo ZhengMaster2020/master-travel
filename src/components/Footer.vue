@@ -53,11 +53,11 @@
 
 <script setup lang="ts">
 import { IconWeiboCircleFill } from '@arco-design/web-vue/es/icon'
-import sphere from '../assets/images/sphere.png'
+import sphere from '@assets/images/sphere.png'
 </script>
 
 <style scoped lang="scss">
-@import '../assets/scss/mixin.scss';
+@import '@assets/scss/mixin.scss';
 
 .travel-footer-wrap {
   width: calc(100vw - 160px);

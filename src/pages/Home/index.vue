@@ -1,5 +1,5 @@
 <template>
-  <Header></Header>
+  <Header />
   <main class="home-main">
     <section class="nearby">
       <h3 class="nearby-title">Explore nearby</h3>
@@ -66,16 +66,17 @@
       </a-tabs>
     </section>
   </main>
-  <Footer></Footer>
+  <Footer />
 </template>
 
 <script setup lang="ts">
-import Header from '../../components/Header.vue'
-import Footer from '../../components/Footer.vue'
-import bg1 from '../../assets/images/nearbg-1.webp'
-import bg2 from '../../assets/images/nearbg-2.webp'
-import bg3 from '../../assets/images/nearbg-3.webp'
-import bg4 from '../../assets/images/nearbg-4.webp'
+import Header from '@components/Header/index.vue'
+import Footer from '@components/Footer.vue'
+
+import bg1 from '@assets/images/nearbg-1.webp'
+import bg2 from '@assets/images/nearbg-2.webp'
+import bg3 from '@assets/images/nearbg-3.webp'
+import bg4 from '@assets/images/nearbg-4.webp'
 
 const inspirationTabs = [
   { name: 'Destinations for arts & culture' },
@@ -88,8 +89,8 @@ const inspirationTabs = [
 </script>
 
 <style lang="scss" scoped>
-@import '../../assets/scss/app.scss';
-@import '../../assets/scss/mixin.scss';
+@import '@assets/scss/app.scss';
+@import '@assets/scss/mixin.scss';
 
 @mixin h5 {
   font-size: 18px;

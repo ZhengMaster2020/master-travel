@@ -1,0 +1,19 @@
+/* ------ 页面滚动条样式， 滚动时显示滚动条， 不滚动时隐藏  Start -----*/
+
+html {
+  overflow: -moz-hidden-unscrollable;
+  height: 100%;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  height: 100%;
+  width: calc(100vw + 18px);
+  overflow: auto;
+}
+
+/* ------ 页面滚动条样式， 滚动时显示滚动条， 不滚动时隐藏  End -----*/
