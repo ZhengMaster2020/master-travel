@@ -1,20 +1,24 @@
 <!--
- * @Author: your name
- * @Date: 2021-12-30 22:05:30
- * @LastEditTime: 2021-12-31 00:25:55
- * @LastEditors: Please set LastEditors
- * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- * @FilePath: /ts/master-travel/src/components/HeaderPopover/index.vue
+ * @Description: 
+ * @Date: 2022-06-15
 -->
-<script setup lang="ts"></script>
 
 <template>
   <div class="header-popover">
     <a-list :bordered="false">
       <template #header>
-        <div class="header-popover-list-item">Sign up</div>
+        <div
+          class="header-popover-list-item"
+          @click="changeDialogVisible('sign')"
+        >
+          Sign up
+        </div>
       </template>
-      <a-list-item class="header-popover-list-item">login in </a-list-item>
+      <a-list-item
+        class="header-popover-list-item"
+        @click="changeDialogVisible('login')"
+        >login in
+      </a-list-item>
       <a-divider class="header-popover-divider" />
       <a-list-item class="header-popover-list-item">Host your home</a-list-item>
       <a-list-item class="header-popover-list-item"
@@ -23,7 +27,24 @@
       <a-list-item class="header-popover-list-item">Help</a-list-item>
     </a-list>
   </div>
+  <Login :visible="visible" @change="visibleChange" />
 </template>
+
+<script setup lang="ts">
+import { ref, unref, Ref } from 'vue'
+import Login from '@/pages/Login/index.vue'
+
+const visible = ref(false)
+
+const changeDialogVisible = (type: String) => {
+  console.log(type, 'sdssd')
+  visible.value = true
+}
+
+const visibleChange = (visible: Ref<Boolean>) => {
+  visible.value = unref(visible)
+}
+</script>
 
 <style lang="scss" scoped>
 .header-popover {

@@ -1,3 +1,41 @@
+<script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+import HeaderPopover from '@components/HeaderPopover/index.vue'
+
+import ImageBg from '@assets/images/bg.webp'
+import ImageBg1 from '@assets/images/bg.png'
+import airbnbRed from '@assets/images/airbnb-red.png'
+import airbnbWhite from '@assets/images/airbnb-white.png'
+
+import {
+  IconGithub,
+  IconUnorderedList,
+  IconApps,
+  IconSearch
+} from '@arco-design/web-vue/es/icon'
+
+const images = [ImageBg, ImageBg1]
+const headerBar = ref(null)
+const backgroundColor = ref('transparent')
+let scrollTop = ref(0)
+let rootDom: HTMLElement | null
+
+const dialogVisible = ref(false)
+
+const getScrollTop = () => {
+  scrollTop.value = rootDom?.scrollTop || 0
+}
+
+onMounted(() => {
+  rootDom = document.getElementById('app')
+  rootDom?.addEventListener('scroll', getScrollTop)
+})
+
+onBeforeUnmount(() => {
+  rootDom?.removeEventListener('scroll', getScrollTop)
+})
+</script>
+
 <template>
   <div class="travel-header">
     <a-carousel
@@ -67,42 +105,6 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-import HeaderPopover from '@components/HeaderPopover/index.vue'
-
-import ImageBg from '@assets/images/bg.webp'
-import ImageBg1 from '@assets/images/bg.png'
-import airbnbRed from '@assets/images/airbnb-red.png'
-import airbnbWhite from '@assets/images/airbnb-white.png'
-
-import {
-  IconGithub,
-  IconUnorderedList,
-  IconApps,
-  IconSearch
-} from '@arco-design/web-vue/es/icon'
-
-const images = [ImageBg, ImageBg1]
-const headerBar = ref(null)
-const backgroundColor = ref('transparent')
-let scrollTop = ref(0)
-let rootDom: HTMLElement | null
-
-const getScrollTop = () => {
-  scrollTop.value = rootDom?.scrollTop || 0
-}
-
-onMounted(() => {
-  rootDom = document.getElementById('app')
-  rootDom?.addEventListener('scroll', getScrollTop)
-})
-
-onBeforeUnmount(() => {
-  rootDom?.removeEventListener('scroll', getScrollTop)
-})
-</script>
 
 <style lang="scss" scoped>
 @import '@assets/scss/mixin';

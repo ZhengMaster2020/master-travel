@@ -1,3 +1,22 @@
+<script setup lang="ts">
+import Header from '@components/Header/index.vue'
+import Footer from '@components/Footer.vue'
+
+import bg1 from '@assets/images/nearbg-1.webp'
+import bg2 from '@assets/images/nearbg-2.webp'
+import bg3 from '@assets/images/nearbg-3.webp'
+import bg4 from '@assets/images/nearbg-4.webp'
+
+const inspirationTabs = [
+  { name: 'Destinations for arts & culture' },
+  { name: 'Destinations for outdoor adventure' },
+  { name: 'Mountain cabins' },
+  { name: 'Beach destinations' },
+  { name: 'Popular destinations' },
+  { name: 'Unique Stays' }
+]
+</script>
+
 <template>
   <Header />
   <main class="home-main">
@@ -68,25 +87,6 @@
   </main>
   <Footer />
 </template>
-
-<script setup lang="ts">
-import Header from '@components/Header/index.vue'
-import Footer from '@components/Footer.vue'
-
-import bg1 from '@assets/images/nearbg-1.webp'
-import bg2 from '@assets/images/nearbg-2.webp'
-import bg3 from '@assets/images/nearbg-3.webp'
-import bg4 from '@assets/images/nearbg-4.webp'
-
-const inspirationTabs = [
-  { name: 'Destinations for arts & culture' },
-  { name: 'Destinations for outdoor adventure' },
-  { name: 'Mountain cabins' },
-  { name: 'Beach destinations' },
-  { name: 'Popular destinations' },
-  { name: 'Unique Stays' }
-]
-</script>
 
 <style lang="scss" scoped>
 @import '@assets/scss/app.scss';
