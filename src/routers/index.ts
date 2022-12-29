@@ -13,7 +13,12 @@ const routes = [
     path: '/index',
     name: 'Home',
     component: () => import('@/pages/Home/index.vue')
-  }
+  },
+  {
+    path: '/test',
+    name: 'Test',
+    component: () => import('@/pages/Test/index.vue')
+  },
 ]
 
 const router = createRouter({

@@ -1,10 +1,14 @@
 <script lang="ts" setup>
+import {computed} from 'vue'
+
 const props = defineProps({
   visible: {
     type: Boolean,
     defalut: false
   }
 })
+
+const modalVisible = computed(() => props.visible)
 
 const emit = defineEmits(['change'])
 
@@ -20,7 +24,7 @@ const handleCancel = () => {
 <template>
   <a-modal
     draggable
-    v-model:visible="visible"
+    v-model:visible="modalVisible"
     @ok="handleOk"
     @cancel="handleCancel"
   >
